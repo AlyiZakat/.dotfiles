@@ -1,42 +1,39 @@
 :autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 call plug#begin('~/.vim/plugged')
-Plug 'rafi/awesome-vim-colorschemes'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'vimwiki/vimwiki'
-Plug 'alvan/vim-php-manual', {'for': 'php'}
 Plug 'preservim/nerdtree'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvie/vim-flake8'
-"let g:python3_host_prog = '/usr/bin/python3'
-"let g:python_host_prog = '/usr/bin/python3'
-
-
 
 call plug#end()
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  indent = {
-    enable = true,
-    disable = {"html"},
+    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ignore_install = { "" }, -- List of parsers to ignore installing
+    indent = {
+        enable = true,
+        disable = {"html"},
     },
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust",},  -- list of language that will be disabled
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
+    highlight = {
+        enable = true,              -- false will disable the whole extension
+        disable = { "c", "rust",},  -- list of language that will be disabled
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    },
 }
 EOF
 
 let g:vscode_style = "dark"
+colorscheme vscode
+
 imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
@@ -55,15 +52,12 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 nmap <silent> gd <Plug>(coc-definition)
-"colorschem molokai 
-colorscheme vscode
-"colorscheme codedark
 let g:vimwiki_list = [{'path': '~/storage/shared/cloud/notes',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:PHP_vintage_case_default_indent=1
 inoremap jk <ESC>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -76,15 +70,15 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-"set relativenumber
 set nu
 set nowrap
+"set relativenumber
 "set scrolloff=8
 set termguicolors
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+"highlight lCursor guifg=NONE guibg=Cyan
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
