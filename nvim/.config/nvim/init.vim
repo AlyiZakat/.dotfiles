@@ -83,3 +83,4 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+let g:python3_host_prog = '~/../usr/bin/python3'
