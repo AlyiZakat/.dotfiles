@@ -9,6 +9,7 @@ Plug 'Mofiqul/vscode.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvie/vim-flake8'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 lua <<EOF
