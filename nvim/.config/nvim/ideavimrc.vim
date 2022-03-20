@@ -7,7 +7,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdtree'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', { 'commit': '61b55e4'}
 Plug 'nvie/vim-flake8'
 
 call plug#end()
@@ -17,7 +18,7 @@ require'nvim-treesitter.configs'.setup {
     ignore_install = { "" }, -- List of parsers to ignore installing
     indent = {
         enable = true,
-        disable = {"html"},
+        disable = {"html",""},
     },
     highlight = {
         enable = true,              -- false will disable the whole extension
