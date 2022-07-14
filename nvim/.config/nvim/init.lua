@@ -3,7 +3,7 @@ require('settings')
 require('keymaps')
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = "php", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     ignore_install = { "" }, -- List of parsers to ignore installing
     indent = {
         enable = true,
@@ -20,3 +20,5 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 require("nvim-tree").setup()
+require("bufferline").setup{}
+require('lualine').setup()
