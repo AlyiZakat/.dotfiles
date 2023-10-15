@@ -45,7 +45,10 @@ require("mason-lspconfig").setup_handlers({
     -- and will be called for each installed server that doesn't have
     -- a dedicated handler.
     function(server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {}
+        require("lspconfig")[server_name].setup {
+            on_attach = on_attach,
+            capabilities = capabilities
+        }
     end,
     -- Next, you can provide targeted overrides for specific servers.
     -- ["rust_analyzer"] = function ()
@@ -146,4 +149,3 @@ cmp.setup {
         { name = 'nvim_lsp_signature_help' },
     },
 }
-

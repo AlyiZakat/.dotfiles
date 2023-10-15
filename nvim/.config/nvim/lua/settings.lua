@@ -9,4 +9,5 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.mouse = 'a'
+vim.g.netrw_banner = 0
 
